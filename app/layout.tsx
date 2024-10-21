@@ -6,6 +6,7 @@ import { getLocale, getMessages } from 'next-intl/server';
 import Footer from '@/sections/Footer/Footer';
 import './globals.css';
 import 'react-toastify/dist/ReactToastify.css';
+import Sidebar from '@/sections/Sidebar/Sidebar';
 
 const dmSans = DM_Sans({ subsets: ['latin'] });
 
@@ -31,10 +32,14 @@ export default async function RootLayout({
         )}
       >
         <NextIntlClientProvider messages={messages}>
-          <main className="gap-x-2 min-h-[calc(100vh)] container">
-            {children}
-          </main>
-          <Footer />
+          <div className="flex min-h-[100vh]">
+            <main className="flex-1">
+              <div className="container mx-auto">
+                <Sidebar children={children} />
+              </div>
+            </main>
+            <Footer />
+          </div>
         </NextIntlClientProvider>
       </body>
     </html>

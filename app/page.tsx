@@ -3,9 +3,5 @@
 import WelcomeSection from '@/sections/WelcomeSection/WelcomeSection';
 
 export default function Home() {
-  return (
-    <>
-      <WelcomeSection />
-    </>
-  );
+  return <WelcomeSection />;
 }

@@ -21,7 +21,7 @@ const Quiz: FC = () => {
   };
 
   return (
-    <div className="p-4">
+    <section className="flex flex-col justify-center h-[70vh]">
       {!showResult ? (
         <Question
           question={quizData[currentQuestion].question}
@@ -31,7 +31,7 @@ const Quiz: FC = () => {
       ) : (
         <Result answers={answers} />
       )}
-    </div>
+    </section>
   );
 };
 
