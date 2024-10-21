@@ -1,0 +1,17 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "contacts": "Contacts",
+    "signup": "SignUp",
+    "try-quiz": "Try Quiz",
+    "quiz": "Quiz",
+    "try-free": "Try for Free"
+  },
+  "welcome-section": {
+    "title": "Identify"
+  },
+  "footer": {
+    "rights": "2024, Inc. All rights reserved"
+  }
+}
