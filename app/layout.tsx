@@ -27,11 +27,11 @@ export default async function RootLayout({
       <body
         className={clsx(
           dmSans.className,
-          `antialiased bg-[#ffffff] tracking-wide`
+          `antialiased bg-[#d0d0d0] tracking-wide`
         )}
       >
         <NextIntlClientProvider messages={messages}>
-          <main className="gap-x-2 min-h-[calc(100vh)] pt-4 container">
+          <main className="gap-x-2 min-h-[calc(100vh)] container">
             {children}
           </main>
           <Footer />

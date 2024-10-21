@@ -1,5 +1,3 @@
-import { Instagram, Linkedin, Mail } from 'lucide-react';
-
 export const navigationMenu = [
   { label: 'Home', href: '/' },
   { label: 'SignUp', href: '/signup' },
@@ -9,17 +7,27 @@ export const navigationMenu = [
 export const socialLinks = [
   {
     id: 1,
-    icon: <Instagram className="w-4 h-4 hover:opacity-80 transition" />,
+    title: 'Terms',
     url: 'https://instagram.com',
   },
   {
-    id: 3,
-    icon: <Linkedin className="w-4 h-4 hover:opacity-80 transition" />,
+    id: 2,
+    title: 'Privacy Policy',
     url: 'https://linkedin.com',
   },
   {
+    id: 3,
+    title: 'Cookie Policy',
+    url: 'mailto:example@example.com',
+  },
+  {
     id: 4,
-    icon: <Mail className="w-4 h-4 hover:opacity-80 transition" />,
+    title: 'Support',
+    url: 'mailto:example@example.com',
+  },
+  {
+    id: 5,
+    title: 'Manage Cookie Preferences',
     url: 'mailto:example@example.com',
   },
 ];

@@ -6,11 +6,11 @@ import Link from 'next/link';
 
 const Socials: FC = () => {
   return (
-    <ul className="flex justify-center items-center gap-6 step7">
-      {socialLinks.map(({ id, url, icon }) => (
+    <ul className="flex justify-start items-center gap-8 mt-5">
+      {socialLinks.map(({ id, url, title }) => (
         <li key={id}>
           <Link href={url} target="_blank" rel="noopener noreferrer">
-            {icon}
+            {title}
           </Link>
         </li>
       ))}
