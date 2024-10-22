@@ -12,7 +12,7 @@ const Subscription: FC = () => {
   const t = useTranslations('subscription');
 
   return (
-    <section className="flex flex-col justify-center md:h-[70vh] sm:h-[80vh] md:w-[500px]">
+    <section className="flex flex-col justify-center md:h-[65vh] sm:h-[80vh] md:w-[500px]">
       <h2 className="md:text-5xl sm:text-3xl font-extrabold mb-4 text-[#040C0C]">
         {t('title')}
       </h2>

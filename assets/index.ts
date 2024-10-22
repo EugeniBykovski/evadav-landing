@@ -3,7 +3,6 @@ export { LogoIcon } from '@/assets/icons/logos/logo-icon';
 import gplay from '@/assets/icons/badge_gplay@2x.webp';
 import appstore from '@/assets/icons/badge_appstore@2x.webp';
 
-import bg_welcome from '@/assets/images/bg_welcome.jpg';
 import plant_1 from '@/assets/images/flowers/plant_1.png';
 import plant_2 from '@/assets/images/flowers/plant_2.png';
 import plant_3 from '@/assets/images/flowers/plant_3.png';
@@ -18,7 +17,6 @@ import person from '@/assets/images/person.jpg';
 export {
   gplay,
   appstore,
-  bg_welcome,
   plant_1,
   plant_2,
   plant_3,

@@ -7,6 +7,8 @@ import Footer from '@/sections/Footer/Footer';
 import './globals.css';
 import 'react-toastify/dist/ReactToastify.css';
 import Sidebar from '@/sections/Sidebar/Sidebar';
+import Header from '@/sections/Header/Header';
+import PageLayout from '@/components/PageLayout/PageLayout';
 
 const dmSans = DM_Sans({ subsets: ['latin'] });
 
@@ -25,13 +27,16 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className="relative">
-      <body className={clsx(dmSans.className, `antialiased bg-[#F1F1F0]`)}>
+      <body className={clsx(dmSans.className, 'antialiased')}>
         <NextIntlClientProvider messages={messages}>
-          <div className="flex min-h-[100vh]">
+          <div className="flex min-h-[100vh] flex-col">
+            <Header />
             <main className="flex-1">
-              <div className="container mx-auto">
-                <Sidebar children={children} />
-              </div>
+              <PageLayout>
+                <div className="container mx-auto">
+                  <Sidebar>{children}</Sidebar>
+                </div>
+              </PageLayout>
             </main>
             <Footer />
           </div>

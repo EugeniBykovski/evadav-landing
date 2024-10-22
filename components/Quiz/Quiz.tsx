@@ -36,7 +36,7 @@ const Quiz: FC = () => {
   };
 
   return (
-    <section className="flex flex-col justify-center md:h-[70vh] sm:h-[80vh] md:w-[450px]">
+    <section className="flex flex-col justify-center md:h-[62vh] sm:h-[80vh] md:w-[450px]">
       <ProgressBar
         currentQuestion={currentQuestion}
         totalQuestions={quizData.length}

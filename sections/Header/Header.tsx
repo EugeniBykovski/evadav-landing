@@ -5,7 +5,7 @@ import Logo from '@/components/Logo/Logo';
 
 const Header: FC = () => {
   return (
-    <header className="flex justify-between items-center py-4 px-6">
+    <header className="flex justify-center items-center py-6 px-6 bg-[#F1F1F0]">
       <Logo />
     </header>
   );
