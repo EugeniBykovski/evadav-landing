@@ -29,12 +29,7 @@ const Sidebar = ({ children }: { children: ReactNode }) => {
               objectFit="contain"
             />
           ) : isSubscriptionPage || isPaymentPage ? (
-            <Image
-              src={bg_welcome}
-              alt="Subscription Background"
-              layout="fill"
-              objectFit="contain"
-            />
+            <Image src={bg_welcome} alt="Subscription Background" />
           ) : null}
         </div>
       )}
