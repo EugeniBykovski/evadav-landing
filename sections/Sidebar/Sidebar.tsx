@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import bg_welcome from '@/assets/images/bg_welcome.jpg';
 import Logo from '@/components/Logo/Logo';
+import React, { ReactNode } from 'react';
 
-const Sidebar = ({ children }: any) => {
+const Sidebar = ({ children }: { children: ReactNode }) => {
   return (
     <section className="flex h-full">
       <div className="h-[81vh] w-[46%]">

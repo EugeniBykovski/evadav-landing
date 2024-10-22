@@ -25,12 +25,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className="relative">
-      <body
-        className={clsx(
-          dmSans.className,
-          `antialiased bg-[#d0d0d0] tracking-wide`
-        )}
-      >
+      <body className={clsx(dmSans.className, `antialiased bg-[#F1F1F0]`)}>
         <NextIntlClientProvider messages={messages}>
           <div className="flex min-h-[100vh]">
             <main className="flex-1">

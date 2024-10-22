@@ -9,9 +9,33 @@
     "try-free": "Try for Free"
   },
   "welcome-section": {
-    "title": "Identify"
+    "title-1": "Find Your",
+    "title-2": "in Minutes",
+    "plant": "Ideal Plant",
+    "description": "Answer a few simple questions and get personalized plant recommendations based on your space, lifestyle, and preferences.",
+    "start": "Start the Quiz"
+  },
+  "payment-success": {
+    "title": "Congratulations!",
+    "description": "Your personalized plant guide is ready. You’ve also unlocked premium access to our plant care tools. Use the login information sent to your email to access your account.",
+    "go": "Download Your Plant Guide"
+  },
+  "quiz": {
+    "cancel": "Cancel",
+    "next": "Next"
+  },
+  "result": {
+    "get-now": "Unlock Your Full Plant Guide Now",
+    "thank-you": "Thank You for Completing the Quiz!",
+    "plan": "We’ve matched you with the perfect plant based on your preferences.",
+    "description": "Ready to start growing? Take good care of your new plant friends with these easy to follow tips!"
+  },
+  "subscription": {
+    "try-free": "Try for free",
+    "title": "Become a Member"
   },
   "footer": {
-    "rights": "Bending Spoons Operations S.p.A. | Via Nino Bonnet 10, 20154, Milan, Italy | VAT, tax code, and number of registration with the Milan Monza Brianza Lodi Company Register 13368510965 | REA number MI 2718456 | Contributed capital $50.000,00"
+    "rights": "Bending Spoons Operations S.p.A. | Via Nino Bonnet 10, 20154, Milan, Italy | VAT, tax code, and number of registration with the Milan Monza Brianza Lodi Company Register 13368510965 | REA number MI 2718456 | Contributed capital $50.000,00",
+    "copyright": "Copyright"
   }
 }

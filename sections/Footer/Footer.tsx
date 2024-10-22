@@ -9,12 +9,12 @@ const Footer: FC = () => {
   const t = useTranslations('footer');
 
   return (
-    <footer className="bg-[#ffffff] text-zinc-400 text-sm py-7 text-left absolute bottom-0 w-full">
+    <footer className="bg-[#ffffff] text-zinc-400 text-sm py-7 text-left absolute bottom-0 w-full shadow-2xl">
       <div className="container">
         <Logo />
         <Socials />
-        <p className="mt-6 w-[60%] text-xs opacity-60">
-          Copyright &copy; {t('rights')}
+        <p className="mt-6 text-xs font-light text-[#929994]">
+          {t('copyright')} &copy; {t('rights')}
         </p>
       </div>
     </footer>

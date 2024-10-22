@@ -9,7 +9,12 @@ const Socials: FC = () => {
     <ul className="flex justify-start items-center gap-8 mt-5">
       {socialLinks.map(({ id, url, title }) => (
         <li key={id}>
-          <Link href={url} target="_blank" rel="noopener noreferrer">
+          <Link
+            href={url}
+            className="text-[#040C0C] hover:opacity-85 transition"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {title}
           </Link>
         </li>

@@ -1,13 +1,8 @@
-import Quiz from '@/components/Quiz/Quiz';
-import { FC } from 'react';
+'use client';
 
-const QuizPage: FC = () => {
-  return (
-    <div className="container mx-auto py-8">
-      <h1 className="text-2xl font-bold mb-6">Найди свое идеальное растение</h1>
-      <Quiz />
-    </div>
-  );
-};
+import { FC } from 'react';
+import Quiz from '@/components/Quiz/Quiz';
+
+const QuizPage: FC = () => <Quiz />;
 
 export default QuizPage;

@@ -28,8 +28,6 @@ const config: Config = {
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
-      // #699849
-      // #0E7726
       colors: {
         highlight: '#699849',
         background: 'hsl(var(--background))',

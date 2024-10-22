@@ -34,81 +34,92 @@ export const socialLinks = [
 
 export const quizData = [
   {
-    question: 'Какой у вас уровень ухода за растениями?',
-    options: ['Новичок', 'Средний уровень', 'Продвинутый'],
+    question: 'What is your experience level with plant care?',
+    options: ['Beginner', 'Intermediate', 'Advanced'],
   },
   {
-    question: 'Для каких целей вы хотите растение?',
+    question: 'What’s your primary reason for getting a plant?',
     options: [
-      'Для красоты',
-      'Для улучшения качества воздуха',
-      'Для удачи и благополучия',
-      'Для выращивания съедобных трав или плодов',
-      'Для создания уюта',
+      'For aesthetic beauty',
+      'To improve air quality',
+      'For good luck and prosperity',
+      'To grow edible herbs or fruits',
+      'To enhance comfort and coziness',
     ],
   },
   {
-    question: 'В какое помещение вы хотите разместить растение?',
+    question: 'Which room do you plan to place the plant in?',
     options: [
-      'В гостиной',
-      'На кухне',
-      'В офисе',
-      'В спальне',
-      'На балконе или в саду',
+      'Living room',
+      'Kitchen',
+      'Office',
+      'Bedroom',
+      'Balcony or garden',
     ],
   },
   {
-    question:
-      'Сколько времени вы можете выделить для ухода за растением в неделю?',
-    options: ['Менее 1 часа', '1-2 часа', '2-4 часа', 'Более 4 часов'],
-  },
-  {
-    question: 'Какое освещение доступно в вашем помещении?',
+    question: 'How much time can you dedicate to plant care each week?',
     options: [
-      'Яркий солнечный свет',
-      'Яркий рассеянный свет',
-      'Полутень',
-      'Тень',
+      'Less than 1 hour',
+      '1-2 hours',
+      '2-4 hours',
+      'More than 4 hours',
     ],
   },
   {
-    question: 'Какой размер растения вас интересует?',
+    question: 'What type of lighting is available in your space?',
     options: [
-      'Небольшое (настольное, до 30 см)',
-      'Среднее (до 1 метра)',
-      'Большое (более 1 метра)',
+      'Bright, direct sunlight',
+      'Bright, indirect light',
+      'Partial shade',
+      'Full shade',
     ],
   },
   {
-    question: 'Насколько важно для вас, чтобы растение было цветущим?',
+    question: 'What size plant are you looking for?',
     options: [
-      'Очень важно',
-      'Не критично, но желательно',
-      'Не важно, мне нравятся зелёные растения',
+      'Small (tabletop, up to 30 cm)',
+      'Medium (up to 1 meter)',
+      'Large (over 1 meter)',
+    ],
+  },
+  {
+    question: 'How important is it to you that the plant blooms?',
+    options: [
+      'Very important',
+      'Nice to have, but not essential',
+      'Not important, I prefer green plants',
     ],
   },
 ];
 
-export const testimonials = [
+export const subscriptionFeatures = [
+  'Unlimited Recognitions',
+  'Auto-diagnostics of plant issues',
+  'Access detailed information on any plant globally',
+  'Endless Greenhouse',
+  'No ads in the app',
+];
+
+export const subscriptionPlans = [
   {
     id: 1,
-    title: 'Best plant app for plant lovers!',
-    description:
-      'I love the watering reminders. Plant notification is thorough and extensive! Me and my plant bbs are very happy!!!!',
-    rating: 5,
+    title: 'Monthly',
+    price: '$12.99',
+    subtitle: 'Info line',
   },
   {
     id: 2,
-    title: 'Wow, this is cool and easy!',
-    description:
-      "I am a new gardener. I've been hoping to find an app like this where I can find all the details to care for specific plants. Also, I was hoping for an app to identify plants around my property. This one seems to have it all, and it's easy to use! And it has reminders! Thank you.",
-    rating: 5,
+    title: 'Billed Weekly',
+    price: '$4.99',
+    subtitle: 'Info line',
+    highlight: true,
+    discount: '35',
   },
   {
     id: 3,
-    title: 'Really cute and helpful so far!!',
-    description:
-      "I love the interface and the aesthetic of this app. It's so calming and easy to use, really makes me feel like a proper Plant Mom.",
-    rating: 5,
+    title: 'Yearly',
+    price: '$79.99',
+    subtitle: 'Info line',
   },
 ];
