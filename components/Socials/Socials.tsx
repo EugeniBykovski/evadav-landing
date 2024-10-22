@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const Socials: FC = () => {
   return (
-    <ul className="flex justify-start items-center gap-8 mt-5">
+    <ul className="flex md:justify-start sm:flex-col md:flex-row sm:gap-1 items-center md:gap-8 mt-5">
       {socialLinks.map(({ id, url, title }) => (
         <li key={id}>
           <Link

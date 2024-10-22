@@ -41,12 +41,15 @@ const PlanCard: FC = () => {
               className="mb-4 text-[#0E7726] border-2 border-[#0E7726]"
             />
             <div className="mb-2">
-              <Label htmlFor={`plan-${id}`} className="text-md text-[#929994]">
+              <Label
+                htmlFor={`plan-${id}`}
+                className="md:text-md sm:text-sm text-[#929994]"
+              >
                 {title}
               </Label>
             </div>
             <div className="text-xl font-bold text-[#040C0C] mb-2">{price}</div>
-            <p className="text-md text-[#929994]">{subtitle}</p>
+            <p className="md:text-md sm:text-sm text-[#929994]">{subtitle}</p>
           </div>
         )
       )}

@@ -10,7 +10,7 @@ const WelcomeSection: FC = () => {
   const t = useTranslations('welcome-section');
 
   return (
-    <section className="flex flex-col justify-center h-[70vh]">
+    <section className="flex flex-col justify-center md:h-[70vh] sm:h-[50vh]">
       <div className="flex flex-col justify-start items-start gap-6">
         <div className="max-w-[550px]">
           <h2 className="text-5xl font-extrabold mb-6 text-[#040C0C]">
