@@ -104,22 +104,21 @@ export const subscriptionFeatures = [
 export const subscriptionPlans = [
   {
     id: 1,
-    title: 'Monthly',
-    price: '$12.99',
-    subtitle: 'Info line',
+    title: 'Weekly',
+    price: '$9.99',
+    subtitle: '3 days free tial',
+    highlight: true,
   },
   {
     id: 2,
-    title: 'Billed Weekly',
-    price: '$4.99',
-    subtitle: 'Info line',
-    highlight: true,
-    discount: '35',
+    title: 'Monthly',
+    price: '$24.99',
+    subtitle: '3 days free tial',
   },
   {
     id: 3,
     title: 'Yearly',
-    price: '$79.99',
-    subtitle: 'Info line',
+    price: '$59.99',
+    subtitle: '3 days free tial',
   },
 ];

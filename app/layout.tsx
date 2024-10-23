@@ -15,6 +15,10 @@ const dmSans = DM_Sans({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Some App',
   description: 'App decription',
+  icons: {
+    icon: '/assets/icons/Icon.svg',
+    shortcut: '/assets/icons/Icon.svg',
+  },
 };
 
 export default async function RootLayout({
@@ -29,11 +33,11 @@ export default async function RootLayout({
     <html lang={locale} className="relative">
       <body className={clsx(dmSans.className, 'antialiased')}>
         <NextIntlClientProvider messages={messages}>
-          <div className="flex min-h-[100vh] flex-col">
+          <div className="flex flex-col min-h-screen">
             <Header />
-            <main className="flex-1">
+            <main className="fixed top-[10vh] w-[100%] h-[71vh]">
               <PageLayout>
-                <div className="container mx-auto">
+                <div className="container mx-auto h-full flex items-center">
                   <Sidebar>{children}</Sidebar>
                 </div>
               </PageLayout>

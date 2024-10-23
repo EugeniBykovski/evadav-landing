@@ -10,14 +10,16 @@ const PageLayout = ({ children }: { children: ReactNode }) => {
   const isHomePage = pathname === '/';
 
   return (
-    <div
+    <section
       className={clsx(
-        isHomePage ? 'bg-cover bg-no-repeat bg-center' : 'bg-[#F1F1F0]'
+        isHomePage
+          ? 'bg-cover bg-no-repeat bg-center h-[calc(100vh-19vh-10vh)]'
+          : 'bg-[#F1F1F0] h-[calc(100vh-19vh-10vh)]'
       )}
       style={isHomePage ? { backgroundImage: `url(${bg_main.src})` } : {}}
     >
       {children}
-    </div>
+    </section>
   );
 };
 

@@ -8,7 +8,7 @@ const FeatureList: FC<IFeatureListProps> = ({ features }) => {
   return (
     <ul className="space-y-2 mb-6">
       {features.map((feature, index) => (
-        <li key={index} className="flex items-center space-x-2">
+        <li key={index} className="flex items-center space-x-2 mb-2">
           <div className="rounded-full bg-green-700 p-[2px]">
             <CheckIcon className="text-white w-3 h-3" />
           </div>

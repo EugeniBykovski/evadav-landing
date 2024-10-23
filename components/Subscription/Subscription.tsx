@@ -12,9 +12,9 @@ const Subscription: FC = () => {
   const t = useTranslations('subscription');
 
   return (
-    <section className="flex flex-col justify-center md:h-[65vh] sm:h-[80vh] md:w-[500px]">
-      <h2 className="md:text-5xl sm:text-3xl font-extrabold mb-4 text-[#040C0C]">
-        {t('title')}
+    <div className="flex flex-col justify-start h-[85%] relative">
+      <h2 className="md:text-5xl sm:text-3xl font-extrabold mb-8 text-[#040C0C]">
+        {t('title')} <span className="text-[#0E7726]">Premium</span>
       </h2>
       <FeatureList features={subscriptionFeatures} />
       <div className="flex justify-between items-center gap-4 mb-6">
@@ -30,12 +30,12 @@ const Subscription: FC = () => {
           <p>$0.00</p>
         </div>
       </div>
-      <Link href={'/payment'} className="mt-6">
+      <Link href={'/payment'} className="mt-6 absolute bottom-0 w-full">
         <Button variant={'action'} size={'lg'} className="w-full">
           {t('try-free')}
         </Button>
       </Link>
-    </section>
+    </div>
   );
 };
 

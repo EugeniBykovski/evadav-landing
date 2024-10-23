@@ -10,7 +10,7 @@ const PaymentSuccess: FC = () => {
 
   return (
     <section className="flex flex-col justify-center md:h-[70vh] sm:h-[35vh] md:w-[500px]">
-      <h1 className="md:text-5xl sm:text-4xl font-extrabold mb-4 text-[#040C0C]">
+      <h1 className="md:text-5xl sm:text-4xl font-extrabold tracking-tight mb-4 text-[#040C0C]">
         {t('title')}
       </h1>
       <p className='md:text-md sm:text-sm text-[#424844] mb-4"'>

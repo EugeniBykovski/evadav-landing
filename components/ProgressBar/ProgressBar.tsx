@@ -18,7 +18,7 @@ const ProgressBar: FC<IProgressBarProps> = ({
       <div className="h-[4px] bg-gray-300 rounded-lg overflow-hidden">
         <Progress
           style={{ width: `${progressPercentage}%` }}
-          className="h-[4px] bg-[#5ab16f] transition-all rounded-lg duration-500"
+          className="h-[4px] bg-[#0E7726] transition-all rounded-lg duration-500"
         ></Progress>
       </div>
     </div>

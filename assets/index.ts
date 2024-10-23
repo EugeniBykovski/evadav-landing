@@ -12,7 +12,6 @@ import plant_6 from '@/assets/images/flowers/plant_6.png';
 import plant_7 from '@/assets/images/flowers/plant_7.png';
 import plant_8 from '@/assets/images/flowers/plant_8.png';
 import plant_9 from '@/assets/images/flowers/plant_9.png';
-import person from '@/assets/images/person.jpg';
 
 export {
   gplay,
@@ -26,5 +25,4 @@ export {
   plant_7,
   plant_8,
   plant_9,
-  person,
 };

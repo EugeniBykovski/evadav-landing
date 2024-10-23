@@ -1,12 +1,9 @@
 {
-  "navigation": {
-    "home": "Home",
-    "about": "About",
-    "contacts": "Contacts",
-    "signup": "SignUp",
-    "try-quiz": "Try Quiz",
-    "quiz": "Quiz",
-    "try-free": "Try for Free"
+  "sidebar": {
+    "description": "This will help us discover the ideal plant for you.",
+    "description-2": "Get personalized, expert-level advice tailored to your plants' specific needs.",
+    "description-3": "Start your journey to thriving, healthy plants today!",
+    "description-4": "Ready to start growing?"
   },
   "welcome-section": {
     "title-1": "Find Your",
@@ -21,7 +18,7 @@
     "go": "Download Your Plant Guide"
   },
   "quiz": {
-    "cancel": "Cancel",
+    "cancel": "Back",
     "next": "Next"
   },
   "result": {
@@ -32,7 +29,7 @@
   },
   "subscription": {
     "try-free": "Try for free",
-    "title": "Become a Member"
+    "title": "Upgrade to"
   },
   "footer": {
     "rights": "Bending Spoons Operations S.p.A. | Via Nino Bonnet 10, 20154, Milan, Italy | VAT, tax code, and number of registration with the Milan Monza Brianza Lodi Company Register 13368510965 | REA number MI 2718456 | Contributed capital $50.000,00",

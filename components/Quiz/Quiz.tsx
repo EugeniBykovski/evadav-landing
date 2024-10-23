@@ -5,8 +5,8 @@ import Question from '../Question/Question';
 import { quizData } from '@/data/mock-data';
 import { Button } from '../ui/button';
 import { useTranslations } from 'next-intl';
-import Result from '../Result/Result';
 import ProgressBar from '../ProgressBar/ProgressBar';
+import { useRouter } from 'next/navigation';
 
 const Quiz: FC = () => {
   const t = useTranslations('quiz');
@@ -14,17 +14,21 @@ const Quiz: FC = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [answers, setAnswers] = useState<string[]>([]);
-  const [showResult, setShowResult] = useState(false);
+  const router = useRouter();
 
   const handleAnswerSelection = (answer: string) => setSelectedAnswer(answer);
   const handleNext = () => {
     if (selectedAnswer) {
-      setAnswers([...answers, selectedAnswer]);
+      const newAnswers = [...answers, selectedAnswer];
+      setAnswers(newAnswers);
       setSelectedAnswer(null);
 
-      currentQuestion + 1 < quizData.length
-        ? setCurrentQuestion(currentQuestion + 1)
-        : setShowResult(true);
+      if (currentQuestion + 1 < quizData.length) {
+        setCurrentQuestion(currentQuestion + 1);
+      } else {
+        localStorage.setItem('quizAnswers', JSON.stringify(newAnswers));
+        router.push('/result');
+      }
     }
   };
 
@@ -36,50 +40,44 @@ const Quiz: FC = () => {
   };
 
   return (
-    <section className="flex flex-col justify-center md:h-[62vh] sm:h-[80vh] md:w-[450px]">
+    <div className="flex flex-col justify-start h-[100%] relative">
       <ProgressBar
         currentQuestion={currentQuestion}
         totalQuestions={quizData.length}
       />
-      {!showResult ? (
-        <>
-          <Question
-            question={quizData[currentQuestion].question}
-            options={quizData[currentQuestion].options}
-            onAnswerSelect={handleAnswerSelection}
-            selectedAnswer={selectedAnswer}
-          />
-          <div className="flex justify-between mt-4">
-            {currentQuestion > 0 ? (
-              <Button
-                className="bg-[#929994] hover:bg-[#7e8580] hover:opacity-90 transition text-white py-2 px-4 md:min-w-52 rounded-3xl"
-                onClick={handleCancel}
-                size={'lg'}
-              >
-                {t('cancel')}
-              </Button>
-            ) : (
-              <Button className="invisible"></Button>
-            )}
-            <Button
-              className={`${
-                selectedAnswer
-                  ? 'bg-green-500 hover:bg-green-600 '
-                  : 'bg-green-500 cursor-not-allowed'
-              } text-white rounded-3xl md:min-w-52`}
-              onClick={handleNext}
-              disabled={!selectedAnswer}
-              variant={'action'}
-              size={'lg'}
-            >
-              {t('next')}
-            </Button>
-          </div>
-        </>
-      ) : (
-        <Result answers={answers} />
-      )}
-    </section>
+      <Question
+        question={quizData[currentQuestion].question}
+        options={quizData[currentQuestion].options}
+        onAnswerSelect={handleAnswerSelection}
+        selectedAnswer={selectedAnswer}
+      />
+      <div className="flex justify-between mt-4 ">
+        {currentQuestion > 0 ? (
+          <Button
+            className="bg-[#929994] hover:bg-[#7e8580] hover:opacity-90 transition text-white py-2 px-4 md:min-w-52 rounded-3xl"
+            onClick={handleCancel}
+            size={'lg'}
+          >
+            {t('cancel')}
+          </Button>
+        ) : (
+          <Button className="invisible"></Button>
+        )}
+        <Button
+          className={`${
+            selectedAnswer
+              ? 'bg-green-500 hover:bg-green-600 '
+              : 'bg-green-500 cursor-not-allowed'
+          } text-white rounded-3xl md:min-w-52`}
+          onClick={handleNext}
+          disabled={!selectedAnswer}
+          variant={'action'}
+          size={'lg'}
+        >
+          {t('next')}
+        </Button>
+      </div>
+    </div>
   );
 };
 

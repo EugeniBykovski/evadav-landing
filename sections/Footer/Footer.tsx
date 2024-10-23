@@ -9,7 +9,7 @@ const Footer: FC = () => {
   const t = useTranslations('footer');
 
   return (
-    <footer className="bg-[#ffffff] text-zinc-400 text-sm py-7 text-left absolute bottom-0 md:w-full sm:w-[100vw] shadow-2xl">
+    <footer className="fixed bottom-0 left-0 w-full h-[19vh] bg-[#ffffff] text-zinc-400 text-sm py-7 shadow-2xl z-50">
       <div className="container">
         <div className="sm:flex sm:justify-center md:justify-start">
           <Logo />
