@@ -1,8 +1,8 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import Quiz from '@/components/Quiz/Quiz';
 
-const QuizPage: FC = () => <Quiz />;
+const QuizPage: FC = memo(() => <Quiz />);
 
 export default QuizPage;

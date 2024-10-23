@@ -1,23 +1,24 @@
 'use client';
 
 import React, { ReactNode } from 'react';
-import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
-import Description from '@/components/Description/Description';
+import Image from 'next/image';
+import { Pages } from './types';
 import flower_1 from '@/assets/images/flower_1.png';
 import flower_2 from '@/assets/images/flower_2.png';
 import flower_3 from '@/assets/images/flower_3.png';
-import { useTranslations } from 'next-intl';
+import Description from '@/components/Description/Description';
 
 const Sidebar = ({ children }: { children: ReactNode }) => {
   const t = useTranslations('sidebar');
 
   const pathname = usePathname();
-  const isHomePage = pathname === '/';
-  const isQuizPage = pathname === '/quiz';
-  const isResultPage = pathname === '/result';
-  const isSubscriptionPage = pathname === '/subscription';
-  const isPaymentPage = pathname === '/payment';
+  const isHomePage = pathname === Pages.HOME;
+  const isQuizPage = pathname === Pages.QUIZ;
+  const isResultPage = pathname === Pages.RESULT;
+  const isSubscriptionPage = pathname === Pages.SUBSCRIPTION;
+  const isPaymentPage = pathname === Pages.PAYMENT;
 
   return (
     <>

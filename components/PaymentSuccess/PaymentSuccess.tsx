@@ -1,11 +1,11 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { useTranslations } from 'next-intl';
 import { Button } from '../ui/button';
 import Link from 'next/link';
 
-const PaymentSuccess: FC = () => {
+const PaymentSuccess: FC = memo(() => {
   const t = useTranslations('payment-success');
 
   return (
@@ -27,6 +27,6 @@ const PaymentSuccess: FC = () => {
       </Link>
     </section>
   );
-};
+});
 
 export default PaymentSuccess;

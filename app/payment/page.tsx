@@ -1,8 +1,8 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import PaymentSuccess from '@/components/PaymentSuccess/PaymentSuccess';
 
-const PaymentSuccessfullPage: FC = () => <PaymentSuccess />;
+const PaymentSuccessfullPage: FC = memo(() => <PaymentSuccess />);
 
 export default PaymentSuccessfullPage;

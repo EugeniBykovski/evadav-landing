@@ -1,27 +1,17 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { ResultProps } from '@/types/quiz-types';
 import Link from 'next/link';
 import { Button } from '../ui/button';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { plantImages } from './ result-images';
+import { getResults } from '@/lib/utils';
 
-const Result: FC<ResultProps> = ({ answers }) => {
+const Result: FC<ResultProps> = memo(({ answers }) => {
   const t = useTranslations('result');
-
-  const getResults = () => {
-    if (answers[0] === 'Beginner') {
-      return ['Peace Lily', 'Succulents', 'African Violet'];
-    } else if (answers[0] === 'Intermediate') {
-      return ['Fern', 'Dracaena', 'ZZ Plant'];
-    } else {
-      return ['Monstera', 'Orchid', 'Philodendron'];
-    }
-  };
-
-  const resultPlants = getResults();
+  const resultPlants = getResults(answers);
 
   return (
     <>
@@ -42,6 +32,6 @@ const Result: FC<ResultProps> = ({ answers }) => {
       </Link>
     </>
   );
-};
+});
 
 export default Result;

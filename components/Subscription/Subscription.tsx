@@ -1,6 +1,6 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import Link from 'next/link';
 import { Button } from '../ui/button';
 import { useTranslations } from 'next-intl';
@@ -8,7 +8,7 @@ import { subscriptionFeatures } from '@/data/mock-data';
 import PlanCard from '../PlanCard/PlanCard';
 import FeatureList from '../FeatureList/FeatureList';
 
-const Subscription: FC = () => {
+const Subscription: FC = memo(() => {
   const t = useTranslations('subscription');
 
   return (
@@ -37,6 +37,6 @@ const Subscription: FC = () => {
       </Link>
     </div>
   );
-};
+});
 
 export default Subscription;

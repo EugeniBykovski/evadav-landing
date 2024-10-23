@@ -1,9 +1,9 @@
 'use client';
 
-import { FC, useEffect, useState } from 'react';
+import { FC, memo, useEffect, useState } from 'react';
 import Result from '@/components/Result/Result';
 
-const ResultPage: FC = () => {
+const ResultPage: FC = memo(() => {
   const [answers, setAnswers] = useState<string[]>([]);
 
   useEffect(() => {
@@ -12,6 +12,6 @@ const ResultPage: FC = () => {
   }, []);
 
   return <Result answers={answers} />;
-};
+});
 
 export default ResultPage;

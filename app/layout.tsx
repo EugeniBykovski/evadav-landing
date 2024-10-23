@@ -3,12 +3,12 @@ import { DM_Sans } from 'next/font/google';
 import clsx from 'clsx';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
-import Footer from '@/sections/Footer/Footer';
 import './globals.css';
 import 'react-toastify/dist/ReactToastify.css';
-import Sidebar from '@/sections/Sidebar/Sidebar';
-import Header from '@/sections/Header/Header';
 import PageLayout from '@/components/PageLayout/PageLayout';
+import Header from '@/sections/Header/Header';
+import Footer from '@/sections/Footer/Footer';
+import Sidebar from '@/sections/Sidebar/Sidebar';
 
 const dmSans = DM_Sans({ subsets: ['latin'] });
 

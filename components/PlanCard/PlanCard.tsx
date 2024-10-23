@@ -1,11 +1,11 @@
 'use client';
 
-import { FC, useState } from 'react';
+import { FC, memo, useState } from 'react';
 import { RadioGroup, RadioGroupItem } from '../ui/radio-group';
 import { subscriptionPlans } from '@/data/mock-data';
 import { Label } from '../ui/label';
 
-const PlanCard: FC = () => {
+const PlanCard: FC = memo(() => {
   const [selectedPlan, setSelectedPlan] = useState<string>(
     subscriptionPlans[0].title
   );
@@ -16,7 +16,7 @@ const PlanCard: FC = () => {
       value={selectedPlan}
       onValueChange={(value) => setSelectedPlan(value)}
     >
-      {subscriptionPlans.map(({ title, subtitle, price, highlight, id }) => (
+      {subscriptionPlans?.map(({ title, subtitle, price, highlight, id }) => (
         <div
           key={id}
           onClick={() => setSelectedPlan(title)}
@@ -59,6 +59,6 @@ const PlanCard: FC = () => {
       ))}
     </RadioGroup>
   );
-};
+});
 
 export default PlanCard;

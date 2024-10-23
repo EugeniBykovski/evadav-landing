@@ -1,17 +1,12 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { QuestionProps } from '@/types/quiz-types';
 import { Label } from '../ui/label';
 import { RadioGroup, RadioGroupItem } from '../ui/radio-group';
 
-const Question: FC<QuestionProps> = ({
-  question,
-  options,
-  onAnswerSelect,
-  selectedAnswer,
-}) => {
-  return (
+const Question: FC<QuestionProps> = memo(
+  ({ question, options, onAnswerSelect, selectedAnswer }) => (
     <div className="mb-4">
       <h2 className="text-3xl font-extrabold mb-4 text-[#040C0C]">
         {question}
@@ -21,7 +16,7 @@ const Question: FC<QuestionProps> = ({
         value={selectedAnswer || ''}
         onValueChange={(value) => onAnswerSelect(value)}
       >
-        {options.map((option, index) => (
+        {options?.map((option, index) => (
           <div
             key={index}
             onClick={() => onAnswerSelect(option)}
@@ -51,7 +46,7 @@ const Question: FC<QuestionProps> = ({
         ))}
       </RadioGroup>
     </div>
-  );
-};
+  )
+);
 
 export default Question;

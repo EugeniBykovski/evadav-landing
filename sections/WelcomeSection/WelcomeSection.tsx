@@ -1,12 +1,12 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import Description from '@/components/Description/Description';
 
-const WelcomeSection: FC = () => {
+const WelcomeSection: FC = memo(() => {
   const t = useTranslations('welcome-section');
 
   return (
@@ -29,6 +29,6 @@ const WelcomeSection: FC = () => {
       </Link>
     </div>
   );
-};
+});
 
 export default WelcomeSection;

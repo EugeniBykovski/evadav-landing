@@ -16,4 +16,5 @@ const Description: FC<PropsWithChildren<DescriptionProps>> = ({
 
   return <p className={descriptionClass}>{children}</p>;
 };
+
 export default Description;

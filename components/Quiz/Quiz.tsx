@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, useState } from 'react';
+import { FC, memo, useCallback, useState } from 'react';
 import Question from '../Question/Question';
 import { quizData } from '@/data/mock-data';
 import { Button } from '../ui/button';
@@ -8,16 +8,20 @@ import { useTranslations } from 'next-intl';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import { useRouter } from 'next/navigation';
 
-const Quiz: FC = () => {
+const Quiz: FC = memo(() => {
   const t = useTranslations('quiz');
+  const router = useRouter();
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [answers, setAnswers] = useState<string[]>([]);
-  const router = useRouter();
 
-  const handleAnswerSelection = (answer: string) => setSelectedAnswer(answer);
-  const handleNext = () => {
+  const handleAnswerSelection = useCallback(
+    (answer: string) => setSelectedAnswer(answer),
+    []
+  );
+
+  const handleNext = useCallback(() => {
     if (selectedAnswer) {
       const newAnswers = [...answers, selectedAnswer];
       setAnswers(newAnswers);
@@ -30,14 +34,14 @@ const Quiz: FC = () => {
         router.push('/result');
       }
     }
-  };
+  }, [selectedAnswer, answers, currentQuestion, router]);
 
-  const handleCancel = () => {
+  const handleCancel = useCallback(() => {
     if (currentQuestion > 0) {
       setCurrentQuestion(currentQuestion - 1);
       setAnswers(answers.slice(0, -1));
     }
-  };
+  }, [currentQuestion, answers]);
 
   return (
     <div className="flex flex-col justify-start h-[100%] relative">
@@ -79,6 +83,6 @@ const Quiz: FC = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Quiz;

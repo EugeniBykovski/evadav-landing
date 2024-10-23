@@ -1,11 +1,11 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { useTranslations } from 'next-intl';
 import Socials from '@/components/Socials/Socials';
 import Logo from '@/components/Logo/Logo';
 
-const Footer: FC = () => {
+const Footer: FC = memo(() => {
   const t = useTranslations('footer');
 
   return (
@@ -21,6 +21,6 @@ const Footer: FC = () => {
       </div>
     </footer>
   );
-};
+});
 
 export default Footer;
