@@ -17,19 +17,7 @@ const Subscription: FC = memo(() => {
         {t('title')} <span className="text-[#0E7726]">Premium</span>
       </h2>
       <FeatureList features={subscriptionFeatures} />
-      <div className="flex justify-between items-center gap-4 mb-6">
-        <PlanCard />
-      </div>
-      <div className="my-4 font-bold">
-        <div className="flex justify-between items-center mb-2">
-          <p>Due Oct 31, 2024</p>
-          <p>$29.99</p>
-        </div>
-        <div className="flex justify-between items-center text-[#0E7726]">
-          <p>Due Today (3 days free)</p>
-          <p>$0.00</p>
-        </div>
-      </div>
+      <PlanCard />
       <Link href={'/payment'} className="mt-6 absolute bottom-0 w-full">
         <Button variant={'action'} size={'lg'} className="w-full">
           {t('try-free')}
