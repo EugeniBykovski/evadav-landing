@@ -32,7 +32,9 @@ const Sidebar = ({ children }: { children: ReactNode }) => {
             isSubscriptionPage || isPaymentPage ? 'h-full' : ''
           }`}
           style={
-            isSubscriptionPage || isPaymentPage ? { height: 'inherit' } : {}
+            isSubscriptionPage || isPaymentPage
+              ? { height: 'inherit', padding: 'inherit' }
+              : { padding: 'inherit' }
           }
         >
           <div

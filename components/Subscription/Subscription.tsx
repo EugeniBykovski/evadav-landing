@@ -21,7 +21,7 @@ const Subscription: FC = memo(() => {
         <PlanCard />
       </div>
       <Link href={'/payment'}>
-        <Button variant={'action'} size={'lg'} className="w-full mb-20">
+        <Button variant={'action'} size={'lg'} className="w-full mb-32">
           {t('try-free')}
         </Button>
       </Link>
