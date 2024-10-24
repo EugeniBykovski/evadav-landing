@@ -14,6 +14,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '../ui/dialog';
+import usePaymentFormUrl from '@/hooks/usePaymentFormUrl';
 
 const Subscription: FC = memo(() => {
   const t = useTranslations('subscription');
@@ -22,19 +23,17 @@ const Subscription: FC = memo(() => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [applicationId, setApplicationId] = useState<string | null>(null);
   const [productId, setProductId] = useState<string | null>(null);
-  const [paymentSuccess, setPaymentSuccess] = useState<boolean>(false);
+  const [paymentSuccess, _] = useState<boolean>(false);
+
+  const paymentFormUrl = usePaymentFormUrl(applicationId, productId);
 
   const handleTryFreeClick = (appId: string | null, prodId: string | null) => {
-    console.log('Application ID:', appId);
-    console.log('Product ID:', prodId);
-
     if (appId && prodId) {
       setApplicationId(appId);
       setProductId(prodId);
       setIsModalOpen(true);
     }
   };
-
   const handleCloseClick = () =>
     paymentSuccess ? router.push('/payment') : setIsModalOpen(false);
 
@@ -65,20 +64,22 @@ const Subscription: FC = memo(() => {
           <DialogHeader>
             <DialogTitle></DialogTitle>
           </DialogHeader>
-          {applicationId && productId ? (
+          {paymentFormUrl ? (
             <iframe
-              src={`https://pay-test.mrgate.net/subscriptions-form?application_id=${applicationId}&product_id=${productId}`}
+              src={paymentFormUrl}
               width="100%"
-              height="400px"
+              height="550px"
               title="Payment Form"
             />
           ) : (
             <p>Loading payment form...</p>
           )}
           <div className="flex justify-end mt-4">
-            <Button onClick={handleCloseClick} variant={'action'}>
-              {paymentSuccess ? 'Go to Payment' : 'Close'}
-            </Button>
+            {paymentSuccess && (
+              <Button onClick={handleCloseClick} variant={'action'}>
+                {paymentSuccess && t('close')}
+              </Button>
+            )}
           </div>
         </DialogContent>
       </Dialog>
