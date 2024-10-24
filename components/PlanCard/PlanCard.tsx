@@ -92,6 +92,7 @@ const PlanCard: FC = memo(() => {
         <div className="flex justify-between items-center text-[#0E7726]">
           <p>Due Today (3 days free)</p>
           <p>$0.00</p>
+          {/* формир модалка с iframe с сылкой и с aplication Id - uuid */}
         </div>
       </div>
     </>

@@ -103,7 +103,8 @@ export const subscriptionFeatures = [
 
 export const subscriptionPlans = [
   {
-    id: 1,
+    product_id: 1,
+    app_id: 111,
     title: 'Weekly',
     price: '$9.99',
     subtitle: '3 days free tial',

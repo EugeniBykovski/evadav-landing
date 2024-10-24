@@ -14,23 +14,30 @@ const Result: FC<ResultProps> = memo(({ answers }) => {
   const resultPlants = getResults(answers);
 
   return (
-    <>
-      <h2 className="text-2xl font-extrabold mb-2 text-[#040C0C]">
-        {t('thank-you')}
-      </h2>
-      <p className="text-md text-[#424844]">{t('plan')}</p>
-      <div className="list-disc my-7 flex justify-between items-center gap-3">
-        {resultPlants.map((plant, index) => (
-          <Image src={plantImages[plant]} alt={plant} width={250} key={index} />
-        ))}
+    <div className="h-full flex flex-col justify-between">
+      <div>
+        <h2 className="text-2xl font-extrabold mb-2 text-[#040C0C]">
+          {t('thank-you')}
+        </h2>
+        <p className="text-md text-[#424844]">{t('plan')}</p>
+        <div className="list-disc my-7 flex justify-between items-center gap-3">
+          {resultPlants.map((plant, index) => (
+            <Image
+              src={plantImages[plant]}
+              alt={plant}
+              width={250}
+              key={index}
+            />
+          ))}
+        </div>
+        <p className="text-md text-[#424844] mb-5">{t('description')}</p>
       </div>
-      <p className="text-md text-[#424844] mb-5">{t('description')}</p>
       <Link href={'/subscription'}>
-        <Button variant={'action'} className="w-full" size={'lg'}>
+        <Button variant={'action'} className="w-full mb-12" size={'lg'}>
           {t('get-now')}
         </Button>
       </Link>
-    </>
+    </div>
   );
 });
 

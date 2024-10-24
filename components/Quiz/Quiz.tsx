@@ -44,18 +44,20 @@ const Quiz: FC = memo(() => {
   }, [currentQuestion, answers]);
 
   return (
-    <div className="flex flex-col justify-start h-[100%] relative">
-      <ProgressBar
-        currentQuestion={currentQuestion}
-        totalQuestions={quizData.length}
-      />
-      <Question
-        question={quizData[currentQuestion].question}
-        options={quizData[currentQuestion].options}
-        onAnswerSelect={handleAnswerSelection}
-        selectedAnswer={selectedAnswer}
-      />
-      <div className="flex justify-between mt-4 ">
+    <div className="flex flex-col justify-between h-full">
+      <div className="flex-grow">
+        <ProgressBar
+          currentQuestion={currentQuestion}
+          totalQuestions={quizData.length}
+        />
+        <Question
+          question={quizData[currentQuestion].question}
+          options={quizData[currentQuestion].options}
+          onAnswerSelect={handleAnswerSelection}
+          selectedAnswer={selectedAnswer}
+        />
+      </div>
+      <div className="flex justify-between mt-4 mb-12">
         {currentQuestion > 0 ? (
           <Button
             className="bg-[#929994] hover:bg-[#7e8580] hover:opacity-90 transition text-white py-2 px-4 md:min-w-52 rounded-3xl"
