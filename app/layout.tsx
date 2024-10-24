@@ -4,7 +4,6 @@ import clsx from 'clsx';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
 import './globals.css';
-import 'react-toastify/dist/ReactToastify.css';
 import PageLayout from '@/components/PageLayout/PageLayout';
 import Header from '@/sections/Header/Header';
 import Footer from '@/sections/Footer/Footer';
