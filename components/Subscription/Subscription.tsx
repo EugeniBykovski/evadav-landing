@@ -23,8 +23,6 @@ const Subscription: FC = memo(() => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [applicationId, setApplicationId] = useState<string | null>(null);
   const [productId, setProductId] = useState<string | null>(null);
-  // @ts-ignore
-  const [paymentSuccess, setPaymentSuccess] = useState<boolean>(false);
 
   const paymentFormUrl = usePaymentFormUrl(applicationId, productId);
 
@@ -35,8 +33,11 @@ const Subscription: FC = memo(() => {
       setIsModalOpen(true);
     }
   };
-  const handleCloseClick = () =>
-    paymentSuccess ? router.push('/payment') : setIsModalOpen(false);
+
+  const handleCloseClick = () => {
+    router.push('/payment');
+    setIsModalOpen(false);
+  };
 
   return (
     <div className="flex flex-col justify-between h-full">
@@ -76,11 +77,9 @@ const Subscription: FC = memo(() => {
             <p>Loading payment form...</p>
           )}
           <div className="flex justify-end mt-4">
-            {paymentSuccess && (
-              <Button onClick={handleCloseClick} variant={'action'}>
-                {paymentSuccess && t('close')}
-              </Button>
-            )}
+            <Button onClick={handleCloseClick} variant={'action'}>
+              {t('close')}
+            </Button>
           </div>
         </DialogContent>
       </Dialog>
