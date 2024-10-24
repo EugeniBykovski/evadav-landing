@@ -49,4 +49,6 @@ const Question: FC<QuestionProps> = memo(
   )
 );
 
+Question.displayName = 'Question';
+
 export default Question;

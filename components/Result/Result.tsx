@@ -41,4 +41,6 @@ const Result: FC<ResultProps> = memo(({ answers }) => {
   );
 });
 
+Result.displayName = 'Result';
+
 export default Result;

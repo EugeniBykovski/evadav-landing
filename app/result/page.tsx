@@ -14,4 +14,6 @@ const ResultPage: FC = memo(() => {
   return <Result answers={answers} />;
 });
 
+ResultPage.displayName = 'ResultPage';
+
 export default ResultPage;

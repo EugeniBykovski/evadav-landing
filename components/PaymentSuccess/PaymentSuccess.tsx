@@ -29,4 +29,6 @@ const PaymentSuccess: FC = memo(() => {
   );
 });
 
+PaymentSuccess.displayName = 'PaymentSuccess';
+
 export default PaymentSuccess;

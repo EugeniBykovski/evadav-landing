@@ -87,4 +87,6 @@ const Quiz: FC = memo(() => {
   );
 });
 
+Quiz.displayName = 'Quiz';
+
 export default Quiz;

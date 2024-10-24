@@ -21,4 +21,6 @@ const Socials: FC = memo(() => (
   </ul>
 ));
 
+Socials.displayName = 'Socials';
+
 export default Socials;

@@ -10,4 +10,6 @@ const Logo: FC = memo(() => (
   </Link>
 ));
 
+Logo.displayName = 'Logo';
+
 export default Logo;

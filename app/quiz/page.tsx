@@ -5,4 +5,6 @@ import Quiz from '@/components/Quiz/Quiz';
 
 const QuizPage: FC = memo(() => <Quiz />);
 
+QuizPage.displayName = 'QuizPage';
+
 export default QuizPage;

@@ -17,4 +17,6 @@ const FeatureList: FC<IFeatureListProps> = memo(({ features }) => (
   </ul>
 ));
 
+FeatureList.displayName = 'FeatureList';
+
 export default FeatureList;

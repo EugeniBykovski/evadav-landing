@@ -31,4 +31,6 @@ const ProgressBar: FC<IProgressBarProps> = memo(
   }
 );
 
+ProgressBar.displayName = 'ProgressBar';
+
 export default ProgressBar;

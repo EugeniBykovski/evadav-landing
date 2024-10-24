@@ -28,7 +28,7 @@ const PlanCard: FC<PlanCardProps> = memo(
         setProductId(plan.title.toLowerCase());
       }
       setCurrentDate(formatDate(new Date()));
-    }, [selectedPlan, setApplicationId]);
+    }, [selectedPlan, setApplicationId, setProductId]);
 
     return (
       <>
@@ -103,5 +103,7 @@ const PlanCard: FC<PlanCardProps> = memo(
     );
   }
 );
+
+PlanCard.displayName = 'PlanCard';
 
 export default PlanCard;

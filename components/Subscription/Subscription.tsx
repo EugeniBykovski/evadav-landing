@@ -23,7 +23,7 @@ const Subscription: FC = memo(() => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [applicationId, setApplicationId] = useState<string | null>(null);
   const [productId, setProductId] = useState<string | null>(null);
-  const [paymentSuccess, _] = useState<boolean>(false);
+  const [paymentSuccess, setPaymentSuccess] = useState<boolean>(false);
 
   const paymentFormUrl = usePaymentFormUrl(applicationId, productId);
 
@@ -86,5 +86,7 @@ const Subscription: FC = memo(() => {
     </div>
   );
 });
+
+Subscription.displayName = 'Subscription';
 
 export default Subscription;

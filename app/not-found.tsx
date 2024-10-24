@@ -14,4 +14,6 @@ const NotFoundPage: FC = memo(() => {
   );
 });
 
+NotFoundPage.displayName = 'NotFoundPage';
+
 export default NotFoundPage;
