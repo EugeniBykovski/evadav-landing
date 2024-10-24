@@ -23,6 +23,7 @@ const Subscription: FC = memo(() => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [applicationId, setApplicationId] = useState<string | null>(null);
   const [productId, setProductId] = useState<string | null>(null);
+  // @ts-ignore
   const [paymentSuccess, setPaymentSuccess] = useState<boolean>(false);
 
   const paymentFormUrl = usePaymentFormUrl(applicationId, productId);
