@@ -103,21 +103,23 @@ export const subscriptionFeatures = [
 
 export const subscriptionPlans = [
   {
-    product_id: 1,
-    app_id: 111,
+    product_id: '1',
+    application_id: 'bb392404-a8e4-4fcf-b631-e74571c7ab09',
     title: 'Weekly',
     price: '$9.99',
     subtitle: '3 days free tial',
     highlight: true,
   },
   {
-    id: 2,
+    product_id: '2',
+    application_id: 'bb392404-a8e4-4fcf-b631-e74571c7ab09',
     title: 'Monthly',
     price: '$24.99',
     subtitle: '3 days free tial',
   },
   {
-    id: 3,
+    product_id: '3',
+    application_id: 'bb392404-a8e4-4fcf-b631-e74571c7ab09',
     title: 'Yearly',
     price: '$59.99',
     subtitle: '3 days free tial',
