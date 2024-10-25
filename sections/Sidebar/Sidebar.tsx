@@ -38,7 +38,7 @@ const Sidebar = ({ children }: { children: ReactNode }) => {
           }
         >
           <div
-            className={`flex justify-between ${
+            className={`lg:flex justify-between sm:hidden ${
               isSubscriptionPage || isPaymentPage
                 ? 'items-center'
                 : 'items-start'
@@ -114,7 +114,9 @@ const Sidebar = ({ children }: { children: ReactNode }) => {
               </div>
             ) : null}
           </div>
-          <div className="w-[50%]">{children}</div>
+          <div className="lg:w-[50%] sm:w-full sm:mt-24 lg:mt-0">
+            {children}
+          </div>
         </div>
       )}
     </>

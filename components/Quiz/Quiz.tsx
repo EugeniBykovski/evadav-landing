@@ -13,38 +13,37 @@ const Quiz: FC = memo(() => {
   const router = useRouter();
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
-  const [answers, setAnswers] = useState<string[]>([]);
+  const [answers, setAnswers] = useState<(string | null)[]>(
+    Array(quizData.length).fill(null)
+  );
+  const selectedAnswer = answers[currentQuestion];
 
   const handleAnswerSelection = useCallback(
-    (answer: string) => setSelectedAnswer(answer),
-    []
+    (answer: string) => {
+      const newAnswers = [...answers];
+      newAnswers[currentQuestion] = answer;
+      setAnswers(newAnswers);
+    },
+    [answers, currentQuestion]
   );
 
   const handleNext = useCallback(() => {
     if (selectedAnswer) {
-      const newAnswers = [...answers, selectedAnswer];
-      setAnswers(newAnswers);
-      setSelectedAnswer(null);
-
       if (currentQuestion + 1 < quizData.length) {
         setCurrentQuestion(currentQuestion + 1);
       } else {
-        localStorage.setItem('quizAnswers', JSON.stringify(newAnswers));
+        localStorage.setItem('quizAnswers', JSON.stringify(answers));
         router.push('/result');
       }
     }
-  }, [selectedAnswer, answers, currentQuestion, router]);
+  }, [selectedAnswer, currentQuestion, quizData.length, answers, router]);
 
-  const handleCancel = useCallback(() => {
-    if (currentQuestion > 0) {
-      setCurrentQuestion(currentQuestion - 1);
-      setAnswers(answers.slice(0, -1));
-    }
-  }, [currentQuestion, answers]);
+  const handleBack = useCallback(() => {
+    if (currentQuestion > 0) setCurrentQuestion(currentQuestion - 1);
+  }, [currentQuestion]);
 
   return (
-    <div className="flex flex-col justify-between h-full">
+    <div className="flex flex-col justify-between lg:h-full sm:h-[71vh]">
       <div className="flex-grow">
         <ProgressBar
           currentQuestion={currentQuestion}
@@ -57,11 +56,11 @@ const Quiz: FC = memo(() => {
           selectedAnswer={selectedAnswer}
         />
       </div>
-      <div className="flex justify-between mt-4 mb-11">
+      <div className="flex justify-between lg:mt-4 sm:mt-10 lg:mb-11 sm:mb-2">
         {currentQuestion > 0 ? (
           <Button
-            className="bg-[#929994] hover:bg-[#7e8580] hover:opacity-90 transition text-white py-2 px-4 md:min-w-52 rounded-3xl"
-            onClick={handleCancel}
+            className="bg-[#929994] hover:bg-[#7e8580] hover:opacity-90 transition text-white py-2 px-4 md:min-w-52 rounded-3xl sm:py-1 sm:px-12 sm:text-md"
+            onClick={handleBack}
             size={'lg'}
           >
             {t('cancel')}
@@ -74,7 +73,7 @@ const Quiz: FC = memo(() => {
             selectedAnswer
               ? 'bg-green-500 hover:bg-green-600 '
               : 'bg-green-500 cursor-not-allowed'
-          } text-white rounded-3xl md:min-w-52`}
+          } text-white rounded-3xl md:min-w-52 sm:py-1 sm:px-12 sm:text-md`}
           onClick={handleNext}
           disabled={!selectedAnswer}
           variant={'action'}

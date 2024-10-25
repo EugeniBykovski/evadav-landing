@@ -11,7 +11,7 @@ const FeatureList: FC<IFeatureListProps> = memo(({ features }) => (
         <div className="rounded-full bg-green-700 p-[2px]">
           <CheckIcon className="text-white w-3 h-3" />
         </div>
-        <span className="md:text-sm sm:text-xs text-[#424844]">{feature}</span>
+        <span className="text-sm text-[#424844]">{feature}</span>
       </li>
     ))}
   </ul>

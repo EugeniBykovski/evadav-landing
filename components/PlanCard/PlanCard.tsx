@@ -34,7 +34,7 @@ const PlanCard: FC<PlanCardProps> = memo(
       <>
         <div className="flex justify-between items-center gap-4 mb-6">
           <RadioGroup
-            className="flex justify-between w-full cursor-pointer"
+            className="flex sm:flex-col md:flex-row sm:w-full md:max-w-none justify-between cursor-pointer"
             value={selectedPlan}
             onValueChange={(value) => setSelectedPlan(value)}
           >
@@ -43,7 +43,7 @@ const PlanCard: FC<PlanCardProps> = memo(
                 <div
                   key={product_id}
                   onClick={() => setSelectedPlan(title)}
-                  className={`relative flex flex-col items-center w-full justify-between p-4 border-2 rounded-2xl cursor-pointer transition hover:shadow-md
+                  className={`relative flex lg:flex-col md:flex-row items-center md:w-full justify-between p-4 border-2 rounded-2xl cursor-pointer transition hover:shadow-md
           ${
             selectedPlan === title
               ? 'border-[#0E7726] bg-[#EDF3EC]'
@@ -54,13 +54,13 @@ const PlanCard: FC<PlanCardProps> = memo(
                   <RadioGroupItem
                     id={`plan-${product_id}`}
                     value={title}
-                    className={`mb-4 border-2 ${
+                    className={`lg:mb-4 sm:mb-0 border-2 ${
                       selectedPlan === title
                         ? 'text-[#0E7726] border-[#0E7726]'
                         : 'text-gray-400 border-gray-400'
                     }`}
                   />
-                  <div className="mb-2">
+                  <div className="lg:mb-2 sm:mb-0">
                     <Label
                       htmlFor={`plan-${product_id}`}
                       className={`md:text-md sm:text-sm ${
@@ -72,7 +72,7 @@ const PlanCard: FC<PlanCardProps> = memo(
                       {title}
                     </Label>
                   </div>
-                  <div className="text-xl font-bold text-[#040C0C] mb-2">
+                  <div className="text-xl font-bold text-[#040C0C] lg:mb-2 sm:mb-0">
                     {price}
                   </div>
                   <p

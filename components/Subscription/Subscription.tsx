@@ -40,9 +40,9 @@ const Subscription: FC = memo(() => {
   };
 
   return (
-    <div className="flex flex-col justify-between h-full">
+    <div className="flex flex-col justify-between lg:h-full sm:h-[71vh]">
       <div>
-        <h2 className="md:text-5xl sm:text-3xl font-extrabold mb-8 text-[#040C0C]">
+        <h2 className="md:text-5xl sm:text-2xl sm:text-center lg:text-left font-extrabold mb-8 text-[#040C0C]">
           {t('title')} <span className="text-[#0E7726]">Premium</span>
         </h2>
         <FeatureList features={subscriptionFeatures} />
@@ -56,13 +56,13 @@ const Subscription: FC = memo(() => {
           <Button
             variant={'action'}
             size={'lg'}
-            className="w-full mb-32"
+            className="w-full lg:mb-32 sm:m-0"
             onClick={() => handleTryFreeClick(applicationId, productId)}
           >
             {t('try-free')}
           </Button>
         </DialogTrigger>
-        <DialogContent>
+        <DialogContent className="md:w-full sm:w-[90%]">
           <DialogHeader>
             <DialogTitle></DialogTitle>
           </DialogHeader>

@@ -8,7 +8,7 @@ import { RadioGroup, RadioGroupItem } from '../ui/radio-group';
 const Question: FC<QuestionProps> = memo(
   ({ question, options, onAnswerSelect, selectedAnswer }) => (
     <div className="mb-4">
-      <h2 className="text-3xl font-extrabold mb-4 text-[#040C0C]">
+      <h2 className="lg:text-3xl sm:text-xl font-extrabold mb-4 text-[#040C0C]">
         {question}
       </h2>
       <RadioGroup
@@ -38,7 +38,7 @@ const Question: FC<QuestionProps> = memo(
             />
             <Label
               htmlFor={`option-${index}`}
-              className="text-md text-[#040C0C] cursor-pointer"
+              className="lg:text-md sm:text-sm text-[#040C0C] cursor-pointer"
             >
               {option}
             </Label>
