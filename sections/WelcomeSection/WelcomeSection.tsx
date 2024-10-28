@@ -19,7 +19,9 @@ const WelcomeSection: FC = memo(() => {
           {t('title-2')}
         </h2>
         <div className="md:max-w-[400px] mb-2">
-          <Description className="text-left">{t('description')}</Description>
+          <Description className="sm:text-left md:text-center lg:text-left">
+            {t('description')}
+          </Description>
         </div>
       </div>
       <Link href={'/quiz'} className="flex sm:justify-center lg:justify-start">
