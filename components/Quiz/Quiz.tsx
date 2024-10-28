@@ -56,7 +56,7 @@ const Quiz: FC = memo(() => {
           selectedAnswer={selectedAnswer}
         />
       </div>
-      <div className="flex justify-between lg:mt-4 sm:mt-10 lg:mb-11 sm:mb-2">
+      <div className="flex justify-between lg:mt-4 sm:mt-10 md:mb-10 lg:mb-11 sm:mb-2">
         {currentQuestion > 0 ? (
           <Button
             className="bg-[#929994] hover:bg-[#7e8580] hover:opacity-90 transition text-white py-2 px-4 md:min-w-52 rounded-3xl sm:py-1 sm:px-12 sm:text-md"

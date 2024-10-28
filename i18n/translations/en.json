@@ -14,8 +14,12 @@
   },
   "payment-success": {
     "title": "Congratulations!",
-    "description": "Your personalized plant guide is ready. You’ve also unlocked premium access to our plant care tools. Use the login information sent to your email to access your account.",
-    "go": "Download Your Plant Guide"
+    "subtitle": "Congratulations on your purchase!",
+    "description": "To get started, scan the QR code below to open the app you’ve unlocked. Your login details have also been sent to your email.",
+    "description-1": "Your personalized plant guide is ready. You’ve also unlocked premium access to our plant care tools. Use the login information sent to your email to access your account.",
+    "description-2": "Scan the QR code with your phone camera to access the app directly.",
+    "go": "Download Your Plant Guide",
+    "mobile-description": "Start your journey to thriving, healthy plants today!"
   },
   "quiz": {
     "cancel": "Back",

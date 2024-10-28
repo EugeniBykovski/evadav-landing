@@ -127,4 +127,8 @@
     background-color: var(--bg-color);
     color: var(--text-color);
   }
+
+  .pagination .swiper-pagination .swiper-pagination-bullet {
+    background: #699849;
+  }
 }

@@ -43,7 +43,7 @@ const PlanCard: FC<PlanCardProps> = memo(
                 <div
                   key={product_id}
                   onClick={() => setSelectedPlan(title)}
-                  className={`relative flex lg:flex-col md:flex-row items-center md:w-full justify-between p-4 border-2 rounded-2xl cursor-pointer transition hover:shadow-md
+                  className={`relative flex md:flex-col items-center md:w-full justify-between p-4 border-2 rounded-2xl cursor-pointer transition hover:shadow-md
           ${
             selectedPlan === title
               ? 'border-[#0E7726] bg-[#EDF3EC]'
@@ -54,13 +54,13 @@ const PlanCard: FC<PlanCardProps> = memo(
                   <RadioGroupItem
                     id={`plan-${product_id}`}
                     value={title}
-                    className={`lg:mb-4 sm:mb-0 border-2 ${
+                    className={`md:mb-4 sm:mb-0 border-2 ${
                       selectedPlan === title
                         ? 'text-[#0E7726] border-[#0E7726]'
                         : 'text-gray-400 border-gray-400'
                     }`}
                   />
-                  <div className="lg:mb-2 sm:mb-0">
+                  <div className="md:mb-2 sm:mb-0">
                     <Label
                       htmlFor={`plan-${product_id}`}
                       className={`md:text-md sm:text-sm ${
@@ -72,7 +72,7 @@ const PlanCard: FC<PlanCardProps> = memo(
                       {title}
                     </Label>
                   </div>
-                  <div className="text-xl font-bold text-[#040C0C] lg:mb-2 sm:mb-0">
+                  <div className="text-xl font-bold text-[#040C0C] md:mb-2 sm:mb-0">
                     {price}
                   </div>
                   <p

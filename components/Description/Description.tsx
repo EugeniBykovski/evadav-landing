@@ -10,7 +10,7 @@ const Description: FC<PropsWithChildren<DescriptionProps>> = ({
 }) => {
   const descriptionClass = clsx(
     'text-left text-[#424844]',
-    'md:text-lg sm:text-sm',
+    'md:text-lg sm:text-md',
     className
   );
 

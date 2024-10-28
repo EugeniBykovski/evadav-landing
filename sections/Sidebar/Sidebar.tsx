@@ -23,7 +23,7 @@ const Sidebar = ({ children }: { children: ReactNode }) => {
   return (
     <>
       {isHomePage ? (
-        <div className="flex justify-start w-full">
+        <div className="flex lg:justify-start sm:justify-center w-full">
           <div>{children}</div>
         </div>
       ) : (
@@ -114,7 +114,7 @@ const Sidebar = ({ children }: { children: ReactNode }) => {
               </div>
             ) : null}
           </div>
-          <div className="lg:w-[50%] sm:w-full sm:mt-24 lg:mt-0">
+          <div className="lg:w-[50%] sm:w-full sm:mt-32 md:mt-6 lg:mt-0">
             {children}
           </div>
         </div>
