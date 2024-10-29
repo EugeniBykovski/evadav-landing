@@ -40,7 +40,7 @@ const Subscription: FC = memo(() => {
   };
 
   return (
-    <div className="flex flex-col justify-between lg:h-full sm:h-[71vh] md:h-[62vh]">
+    <div className="flex flex-col justify-between lg:h-full sm:h-[73vh] md:h-[62vh]">
       <div>
         <h2 className="md:text-5xl sm:text-[29px] text-left font-extrabold sm:mb-4 md:mb-8 text-[#040C0C]">
           {t('title')} <span className="text-[#0E7726]">Premium</span>

@@ -13,7 +13,7 @@ const PageLayout = ({ children }: { children: ReactNode }) => {
     <section
       className={clsx(
         isHomePage
-          ? 'bg-cover bg-no-repeat md:bg-center md:h-[calc(100vh-19vh-10vh)] sm:h-screen'
+          ? 'bg-cover bg-no-repeat md:bg-center md:h-[calc(100vh-19vh-10vh)] sm:h-[77vh]'
           : 'bg-[#F1F1F0] sm:h-screen md:h-[calc(100vh-19vh-10vh)]'
       )}
       style={isHomePage ? { backgroundImage: `url(${bg_main.src})` } : {}}
