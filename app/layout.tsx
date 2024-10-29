@@ -34,7 +34,7 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
           <div className="flex flex-col min-h-screen">
             <Header />
-            <main className="md:fixed top-[10vh] w-[100%] lg:h-[71vh] sm:h-[90vh]">
+            <main className="md:fixed top-[10vh] w-[100%] lg:h-[71vh] sm:h-[80vh]">
               <PageLayout>
                 <div className="container mx-auto lg:h-full md:h-[57vh] flex items-center">
                   <Sidebar>{children}</Sidebar>

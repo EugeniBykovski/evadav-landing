@@ -114,7 +114,7 @@ const Sidebar = ({ children }: { children: ReactNode }) => {
               </div>
             ) : null}
           </div>
-          <div className="lg:w-[50%] sm:w-full sm:mt-32 md:mt-6 lg:mt-0">
+          <div className="lg:w-[50%] sm:w-full sm:mt-3 md:mt-6 lg:mt-0">
             {children}
           </div>
         </div>
