@@ -8,12 +8,13 @@ import PageLayout from '@/components/PageLayout/PageLayout';
 import Header from '@/sections/Header/Header';
 import Footer from '@/sections/Footer/Footer';
 import Sidebar from '@/sections/Sidebar/Sidebar';
+import Head from 'next/head';
 
 const dmSans = DM_Sans({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Some App',
-  description: 'App decription',
+  title: 'Plant Ai',
+  description: 'Plant AI Expert',
   icons: {
     icon: '/assets/icons/Icon.svg',
     shortcut: '/assets/icons/Icon.svg',
@@ -30,11 +31,17 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className="relative">
+      <Head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"
+        />
+      </Head>
       <body className={clsx(dmSans.className, 'antialiased')}>
         <NextIntlClientProvider messages={messages}>
           <div className="flex flex-col min-h-screen">
             <Header />
-            <main className="md:fixed top-[10vh] w-[100%] lg:h-[71vh] sm:h-[80vh]">
+            <main className="md:fixed top-[8vh] w-[100%]">
               <PageLayout>
                 <div className="container mx-auto lg:h-full md:h-[57vh] flex items-center">
                   <Sidebar>{children}</Sidebar>
