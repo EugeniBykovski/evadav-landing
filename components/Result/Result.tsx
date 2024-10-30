@@ -51,7 +51,7 @@ const Result: FC<ResultProps> = memo(({ answers }) => {
           {t('description')}
         </p>
       </div>
-      <Link href={'/subscription'} className="lg:mt-4 sm:mt-6">
+      <Link href={'/subscription'} className="lg:mt-4 sm:mt-8">
         <Button variant={'action'} className="w-full mb-12" size={'lg'}>
           {t('get-now')}
         </Button>
