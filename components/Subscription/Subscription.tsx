@@ -1,7 +1,6 @@
 'use client';
 
 import { FC, memo, useState } from 'react';
-import { useRouter } from 'next/navigation';
 import { Button } from '../ui/button';
 import { useTranslations } from 'next-intl';
 import { subscriptionFeatures } from '@/data/mock-data';
@@ -19,7 +18,6 @@ import usePaymentFormUrl from '@/hooks/usePaymentFormUrl';
 const Subscription: FC = memo(() => {
   const t = useTranslations('subscription');
 
-  const router = useRouter();
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [applicationId, setApplicationId] = useState<string | null>(null);
   const [productId, setProductId] = useState<string | null>(null);
@@ -32,11 +30,6 @@ const Subscription: FC = memo(() => {
       setProductId(prodId);
       setIsModalOpen(true);
     }
-  };
-
-  const handleCloseClick = () => {
-    router.push('/payment');
-    setIsModalOpen(false);
   };
 
   return (
@@ -76,11 +69,6 @@ const Subscription: FC = memo(() => {
           ) : (
             <p>Loading payment form...</p>
           )}
-          <div className="flex justify-end mt-4">
-            <Button onClick={handleCloseClick} variant={'action'}>
-              {t('close')}
-            </Button>
-          </div>
         </DialogContent>
       </Dialog>
     </div>

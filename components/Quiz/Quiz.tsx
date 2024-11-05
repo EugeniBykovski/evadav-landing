@@ -36,7 +36,7 @@ const Quiz: FC = memo(() => {
         router.push('/result');
       }
     }
-  }, [selectedAnswer, currentQuestion, quizData.length, answers, router]);
+  }, [selectedAnswer, currentQuestion, answers, router]);
 
   const handleBack = useCallback(() => {
     if (currentQuestion > 0) setCurrentQuestion(currentQuestion - 1);

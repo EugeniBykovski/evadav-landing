@@ -23,4 +23,6 @@ const PageLayout = ({ children }: { children: ReactNode }) => {
   );
 };
 
+PageLayout.displayName = 'PageLayout';
+
 export default PageLayout;

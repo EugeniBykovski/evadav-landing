@@ -37,4 +37,6 @@ const WelcomeSection: FC = memo(() => {
   );
 });
 
+WelcomeSection.displayName = 'WelcomeSection';
+
 export default WelcomeSection;

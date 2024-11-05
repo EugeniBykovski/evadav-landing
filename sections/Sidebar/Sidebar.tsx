@@ -123,4 +123,6 @@ const Sidebar = ({ children }: { children: ReactNode }) => {
   );
 };
 
+Sidebar.displayName = 'Sidebar';
+
 export default Sidebar;
