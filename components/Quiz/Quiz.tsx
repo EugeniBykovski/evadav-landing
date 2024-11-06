@@ -43,7 +43,7 @@ const Quiz: FC = memo(() => {
   }, [currentQuestion]);
 
   return (
-    <div className="flex flex-col justify-between lg:h-full sm:h-[71vh]">
+    <div className="flex flex-col justify-between lg:h-full sm:h-[71vh] md:h-[40vh]">
       <div className="flex-grow">
         <ProgressBar
           currentQuestion={currentQuestion}

@@ -33,7 +33,7 @@ const Subscription: FC = memo(() => {
   };
 
   return (
-    <div className="flex flex-col justify-between lg:h-full md:h-[62vh]">
+    <div className="flex flex-col justify-between">
       <div>
         <h2 className="md:text-5xl sm:text-[29px] text-left font-extrabold sm:mb-4 md:mb-8 text-[#040C0C]">
           {t('title')} <span className="text-[#0E7726]">Premium</span>
@@ -55,7 +55,7 @@ const Subscription: FC = memo(() => {
             {t('try-free')}
           </Button>
         </DialogTrigger>
-        <DialogContent className="md:w-full sm:w-[90%]">
+        <DialogContent className="md:w-full sm:w-[90%] customLandscape:sm:w-[70%] customLandscape:sm:scale-50">
           <DialogHeader>
             <DialogTitle></DialogTitle>
           </DialogHeader>

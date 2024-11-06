@@ -41,9 +41,9 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
           <div className="flex flex-col min-h-screen">
             <Header />
-            <main className="md:fixed top-[8vh] w-[100%]">
+            <main className="md:fixed customLandscape:md:static top-[8vh] w-[100%]">
               <PageLayout>
-                <div className="container mx-auto lg:h-full md:h-[57vh] flex items-center">
+                <div className="container mx-auto lg:h-full md:h-[57vh] customLandscape:md:h-auto customLandscape:py-4 flex items-center scale-95">
                   <Sidebar>{children}</Sidebar>
                 </div>
               </PageLayout>

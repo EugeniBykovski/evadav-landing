@@ -11,6 +11,7 @@ const config: Config = {
   ],
   theme: {
     screens: {
+      customLandscape: { raw: '(max-height: 550px) and (max-width: 900px)' },
       sm: '375px',
       md: '768px',
       lg: '1380px',
