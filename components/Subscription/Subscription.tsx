@@ -65,7 +65,7 @@ const Subscription: FC = memo(() => {
               width="100%"
               height="550px"
               title="Payment Form"
-              allow="payment"
+              allow="payment *"
             />
           ) : (
             <p>Loading payment form...</p>
