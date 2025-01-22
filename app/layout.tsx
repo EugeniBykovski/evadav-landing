@@ -36,6 +36,21 @@ export default async function RootLayout({
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"
         />
+        {/* Google Tag Manager Script */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-JWXXSGPT7X"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-JWXXSGPT7X');
+            `,
+          }}
+        ></script>
       </Head>
       <body className={clsx(dmSans.className, 'antialiased')}>
         <NextIntlClientProvider messages={messages}>

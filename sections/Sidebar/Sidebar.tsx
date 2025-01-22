@@ -20,6 +20,12 @@ const Sidebar = ({ children }: { children: ReactNode }) => {
   const isSubscriptionPage = pathname === Pages.SUBSCRIPTION;
   const isPaymentPage = pathname === Pages.PAYMENT;
 
+  const isTermsPage = pathname === Pages.TERMS;
+  const isPrivacyPage = pathname === Pages.PRIVACY;
+  const isSupportPage = pathname === Pages.SUPPORT;
+
+  const shouldHideSidebar = isTermsPage || isPrivacyPage || isSupportPage;
+
   return (
     <>
       {isHomePage ? (
@@ -30,7 +36,7 @@ const Sidebar = ({ children }: { children: ReactNode }) => {
         <div
           className={`flex justify-between w-full gap-12 ${
             isSubscriptionPage || isPaymentPage ? 'h-full' : ''
-          }`}
+          } `}
           style={
             isSubscriptionPage || isPaymentPage
               ? { height: 'inherit', padding: 'inherit' }
@@ -42,7 +48,7 @@ const Sidebar = ({ children }: { children: ReactNode }) => {
               isSubscriptionPage || isPaymentPage
                 ? 'items-center'
                 : 'items-start'
-            } w-[50%]`}
+            } w-[50%] ${shouldHideSidebar ? 'lg:hidden' : 'flex'}`}
           >
             {isQuizPage ? (
               <div className="flex flex-col justify-center h-[90%] items-start w-[100%]">
@@ -114,7 +120,13 @@ const Sidebar = ({ children }: { children: ReactNode }) => {
               </div>
             ) : null}
           </div>
-          <div className="lg:w-[50%] sm:w-full sm:mt-10 md:mt-6 lg:mt-0">
+          <div
+            className={`lg:w-[50%] sm:w-full sm:mt-10 md:mt-6 lg:mt-0 ${
+              shouldHideSidebar
+                ? 'lg:w-[100%] overflow-auto h-[100vh]'
+                : 'lg:w-[50%]'
+            }`}
+          >
             {children}
           </div>
         </div>

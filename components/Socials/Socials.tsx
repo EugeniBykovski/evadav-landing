@@ -11,7 +11,6 @@ const Socials: FC = memo(() => (
         <Link
           href={url}
           className="text-[#040C0C] hover:opacity-85 transition"
-          target="_blank"
           rel="noopener noreferrer"
         >
           {title}
