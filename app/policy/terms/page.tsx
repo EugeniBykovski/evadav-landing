@@ -1,9 +1,6 @@
-{
-  /* eslint-disable react/no-unescaped-entities */
-}
+'use client';
 
-('use client');
-
+/* eslint-disable react/no-unescaped-entities */
 import { FC, memo } from 'react';
 
 const TermsPage: FC = memo(() => (
