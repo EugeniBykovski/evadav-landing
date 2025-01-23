@@ -37,6 +37,7 @@ export default async function RootLayout({
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"
         />
         {/* Google Tag Manager Script */}
+        {/* eslint-disable @next/next/next-script-for-ga */}
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-JWXXSGPT7X"
