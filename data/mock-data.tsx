@@ -18,7 +18,7 @@ export const socialLinks = [
   {
     id: 3,
     title: 'Support',
-    url: '/policy/support',
+    url: 'mailto:glimmereyeventureslimited@gmail.com',
   },
 ];
 
@@ -93,7 +93,7 @@ export const subscriptionFeatures = [
 
 export const subscriptionPlans = [
   {
-    product_id: '1',
+    product_id: 'weekly',
     application_id: 'bb392404-a8e4-4fcf-b631-e74571c7ab09',
     title: 'Weekly',
     price: '$9.99',
@@ -101,14 +101,14 @@ export const subscriptionPlans = [
     highlight: true,
   },
   {
-    product_id: '2',
+    product_id: 'monthly',
     application_id: 'bb392404-a8e4-4fcf-b631-e74571c7ab09',
     title: 'Monthly',
     price: '$24.99',
     subtitle: '3 days free tial',
   },
   {
-    product_id: '3',
+    product_id: 'yearly',
     application_id: 'bb392404-a8e4-4fcf-b631-e74571c7ab09',
     title: 'Yearly',
     price: '$59.99',

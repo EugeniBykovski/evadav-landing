@@ -6,7 +6,7 @@ const usePaymentFormUrl = (
 ) => {
   return useMemo(() => {
     if (applicationId && productId) {
-      return `https://pay-test.mrgate.net/subscriptions-form?application_id=${encodeURIComponent(
+      return `https://pay.mrgate.net/subscriptions-form?application_id=${encodeURIComponent(
         applicationId
       )}&product_id=${encodeURIComponent(productId)}`;
     }
