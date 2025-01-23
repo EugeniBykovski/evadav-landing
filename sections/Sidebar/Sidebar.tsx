@@ -121,9 +121,7 @@ const Sidebar = ({ children }: { children: ReactNode }) => {
           </div>
           <div
             className={`lg:w-[50%] sm:w-full sm:mt-10 md:mt-6 lg:mt-0 ${
-              shouldHideSidebar
-                ? 'lg:w-[100vw] overflow-auto h-[100vh]'
-                : 'lg:w-[50%]'
+              shouldHideSidebar ? 'lg:w-[100%] overflow-auto h-[100vh]' : ''
             }`}
           >
             {children}
