@@ -8,7 +8,7 @@ import PageLayout from '@/components/PageLayout/PageLayout';
 import Header from '@/sections/Header/Header';
 import Footer from '@/sections/Footer/Footer';
 import Sidebar from '@/sections/Sidebar/Sidebar';
-import Head from 'next/head';
+import Script from 'next/script';
 
 const dmSans = DM_Sans({ subsets: ['latin'] });
 
@@ -31,29 +31,19 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className="relative">
-      <Head>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"
-        />
-        {/* Google Tag Manager Script */}
-        {/* eslint-disable @next/next/next-script-for-ga */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-JWXXSGPT7X"
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-JWXXSGPT7X');
-            `,
-          }}
-        ></script>
-      </Head>
       <body className={clsx(dmSans.className, 'antialiased')}>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-JWXXSGPT7X"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-JWXXSGPT7X');
+          `}
+        </Script>
         <NextIntlClientProvider messages={messages}>
           <div className="flex flex-col min-h-screen">
             <Header />
