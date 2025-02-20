@@ -1,6 +1,12 @@
 'use client';
 
-import { createContext, useContext, useEffect, useState } from 'react';
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  Suspense,
+} from 'react';
 import { useSearchParams } from 'next/navigation';
 
 interface ClickIdContextType {
@@ -14,6 +20,14 @@ export const ClickIdProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
+  return (
+    <Suspense fallback={null}>
+      <ClickIdProviderInner>{children}</ClickIdProviderInner>
+    </Suspense>
+  );
+};
+
+const ClickIdProviderInner = ({ children }: { children: React.ReactNode }) => {
   const [clickId, setClickId] = useState<string | null>(null);
   const searchParams = useSearchParams();
 
