@@ -6,7 +6,6 @@ import { useTranslations } from 'next-intl';
 import { subscriptionFeatures } from '@/data/mock-data';
 import PlanCard from '../PlanCard/PlanCard';
 import FeatureList from '../FeatureList/FeatureList';
-import useClickId from '@/hooks/useClickId';
 import {
   Dialog,
   DialogContent,
@@ -15,6 +14,7 @@ import {
   DialogTrigger,
 } from '../ui/dialog';
 import usePaymentFormUrl from '@/hooks/usePaymentFormUrl';
+import { useClickId } from '@/context/ClickIdContext';
 
 const Subscription: FC = memo(() => {
   const t = useTranslations('subscription');
@@ -33,6 +33,8 @@ const Subscription: FC = memo(() => {
       setIsModalOpen(true);
     }
   };
+
+  console.log('clickId', clickId);
 
   return (
     <div className="flex flex-col justify-between">

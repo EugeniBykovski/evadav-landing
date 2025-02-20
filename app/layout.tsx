@@ -9,6 +9,7 @@ import Header from '@/sections/Header/Header';
 import Footer from '@/sections/Footer/Footer';
 import Sidebar from '@/sections/Sidebar/Sidebar';
 import Script from 'next/script';
+import { ClickIdProvider } from '@/context/ClickIdContext';
 
 const dmSans = DM_Sans({ subsets: ['latin'] });
 
@@ -30,7 +31,7 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <>
+    <ClickIdProvider>
       <html lang={locale} className="relative">
         <Script
           id="gtm-script"
@@ -62,6 +63,6 @@ export default async function RootLayout({
           </NextIntlClientProvider>
         </body>
       </html>
-    </>
+    </ClickIdProvider>
   );
 }
