@@ -1,23 +1,21 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useSearchParams } from 'next/navigation';
 
 const useClickId = () => {
-  const searchParams = useSearchParams();
   const [clickId, setClickId] = useState<string | null>(null);
 
   useEffect(() => {
-    // get `cid` from URL
+    const searchParams = new URLSearchParams(window.location.search);
     const cidFromUrl = searchParams.get('cid');
+
     if (cidFromUrl) {
       setClickId(cidFromUrl);
-      localStorage.setItem('clickId', cidFromUrl); // save in local storage
+      localStorage.setItem('clickId', cidFromUrl);
     }
-  }, [searchParams]);
+  }, []);
 
   useEffect(() => {
-    // replace `{clickid}`
     const replaceClickIdInLinks = () => {
       const storedClickId = localStorage.getItem('clickId');
       if (!storedClickId) return;
