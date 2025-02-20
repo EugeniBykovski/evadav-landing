@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 import { subscriptionFeatures } from '@/data/mock-data';
 import PlanCard from '../PlanCard/PlanCard';
 import FeatureList from '../FeatureList/FeatureList';
+import useClickId from '@/hooks/useClickId';
 import {
   Dialog,
   DialogContent,
@@ -18,11 +19,12 @@ import usePaymentFormUrl from '@/hooks/usePaymentFormUrl';
 const Subscription: FC = memo(() => {
   const t = useTranslations('subscription');
 
+  const clickId = useClickId();
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [applicationId, setApplicationId] = useState<string | null>(null);
   const [productId, setProductId] = useState<string | null>(null);
 
-  const paymentFormUrl = usePaymentFormUrl(applicationId, productId);
+  const paymentFormUrl = usePaymentFormUrl(applicationId, productId, clickId);
 
   const handleTryFreeClick = (appId: string | null, prodId: string | null) => {
     if (appId && prodId) {
