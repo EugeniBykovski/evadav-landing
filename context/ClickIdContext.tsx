@@ -28,13 +28,16 @@ export const ClickIdProvider = ({
 };
 
 const ClickIdProviderInner = ({ children }: { children: React.ReactNode }) => {
-  const [clickId, setClickId] = useState<string | null>(null);
+  const [clickId, setClickId] = useState<string | null>(() =>
+    typeof window !== 'undefined' ? localStorage.getItem('clickId') : null
+  );
   const searchParams = useSearchParams();
 
   useEffect(() => {
     const cidFromUrl = searchParams.get('cid');
     if (cidFromUrl) {
       setClickId(cidFromUrl);
+      localStorage.setItem('clickId', cidFromUrl);
     }
   }, [searchParams]);
 
